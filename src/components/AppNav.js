@@ -2,15 +2,15 @@ import { Moon, Sun } from 'lucide-react';
 import Link from 'next/link';
 
 const AppLinks = [
-  { href: '#', text: 'About' },
-  { href: '#', text: 'Projects' },
-  { href: '#', text: 'Contact' },
+  { href: '#about', text: 'About' },
+  { href: '#projects', text: 'Projects' },
+  { href: '#contact', text: 'Contact' },
 ];
 
 function AppNav() {
   return (
     <nav className='flex-1 h-14 flex place-self-end items-center gap-5'>
-      <ul className='flex gap-10 bg-zinc-800 px-6 py-3 rounded-2xl text-zinc-400 shadow-md'>
+      <ul className='hidden sm:flex gap-10 bg-zinc-800 px-6 py-3 rounded-2xl text-zinc-400 shadow-md'>
         {AppLinks.map((link) => (
           <li
             key={link.text}

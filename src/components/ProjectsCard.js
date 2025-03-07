@@ -14,7 +14,7 @@ function ProjectsCard({ date, title, description, liveLink, sourceLink }) {
 
       <p className='text-sm text-zinc-400 tracking-tight'>{description}</p>
 
-      <div className='flex items-center gap-5'>
+      <div className='flex flex-col sm:flex-row items-center gap-5'>
         <Link
           href={liveLink}
           className='hover:bg-zinc-800 hover:text-emerald-500 hover:shadow-2xl px-3 py-2 rounded-lg transition-all flex items-center gap-1 text-emerald-400 text-sm xl:text-base'

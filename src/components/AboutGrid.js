@@ -29,7 +29,7 @@ const AboutContents = [
 
 function AboutGrid() {
   return (
-    <div className='mt-5 w-full lg:grid lg:grid-cols-2 gap-5 lg:gap-y-10'>
+    <div className='mt-5 w-full lg:grid lg:grid-cols-2 flex flex-col gap-5 lg:gap-y-10'>
       {AboutContents.map((content) => (
         <AboutCard
           key={content.title}

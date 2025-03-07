@@ -35,7 +35,7 @@ function LinkItem({ icon, href }) {
   return (
     <Link
       href={href}
-      className='text-zinc-500 hover:text-zinc-200 transition-colors duration-300'
+      className='text-zinc-300 hover:text-zinc-50 transition-colors duration-300 bg-zinc-800 p-2 rounded-full shadow'
     >
       {icon}
     </Link>

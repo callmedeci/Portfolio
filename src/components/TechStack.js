@@ -5,39 +5,40 @@ const techList = [
     imageSrc: '/svg/javascript.svg',
     title: 'javascript',
     level: 'Expert',
-    years: '2 years',
+  },
+  {
+    imageSrc: '/svg/tailwind.svg',
+    title: 'tailwindcss',
+    level: 'Expert',
   },
   {
     imageSrc: '/svg/react.svg',
     title: 'react developer',
     level: 'Mid',
-    years: '1 year',
   },
   {
     imageSrc: '/svg/nextjs.svg',
     title: 'nextJS developer',
     level: 'junior',
-    years: '1 year',
   },
 ];
 
 function TechStack() {
   return (
-    <ul className='flex flex-col gap-5 mt-5'>
+    <ul className='flex flex-col md:grid md:grid-cols-2 gap-5 mt-5'>
       {techList.map((tech) => (
         <TechItem
           key={tech.title}
           imageSrc={tech.imageSrc}
           title={tech.title}
           level={tech.level}
-          years={tech.years}
         />
       ))}
     </ul>
   );
 }
 
-function TechItem({ imageSrc, title, level, years }) {
+function TechItem({ imageSrc, title, level }) {
   return (
     <li className='flex gap-2 items-center w-full'>
       <div className='bg-zinc-800 p-2 w-max rounded-full overflow-hidden shadow-md'>
@@ -49,14 +50,10 @@ function TechItem({ imageSrc, title, level, years }) {
           alt={title}
         />
       </div>
-      <div className='flex flex-col text-sm font-semibold'>
-        <span className='text-zinc-300 capitalize'>{title}</span>
-        <span className='text-zinc-400 uppercase'>{level}</span>
+      <div className='flex flex-col text-sm font-semibold capitalize'>
+        <span className='text-zinc-300'>{title}</span>
+        <span className='text-zinc-400'>{level}</span>
       </div>
-
-      <span className='flex-1 text-end text-zinc-400 font-medium text-sm xl:text-base'>
-        {years} / Experience
-      </span>
     </li>
   );
 }
