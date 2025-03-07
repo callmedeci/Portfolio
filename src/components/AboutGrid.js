@@ -5,7 +5,7 @@ const AboutContents = [
     title: 'What Can I do?',
     description:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum ipsa alias rem dolorem doloremque recusandae numquam dolore?',
-    className: 'translate-x-5 lg:translate-x-0 lg:-translate-y-5',
+    className: 'translate-x-5 lg:translate-x-0 lg:-translate-y-2',
   },
   {
     title: 'What Is my hobbies?',
@@ -17,7 +17,7 @@ const AboutContents = [
     title: 'Main languages?',
     description:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum ipsa alias rem dolorem doloremque recusandae numquam dolore?',
-    className: 'translate-x-5 lg:translate-x-0 lg:-translate-y-10',
+    className: 'translate-x-5 lg:translate-x-0 lg:-translate-y-7',
   },
   {
     title: 'Where to find me?',
@@ -29,7 +29,7 @@ const AboutContents = [
 
 function AboutGrid() {
   return (
-    <div className='mt-5 w-full flex flex-col lg:grid lg:grid-cols-2 gap-5'>
+    <div className='mt-5 w-full lg:grid lg:grid-cols-2 gap-5 lg:gap-y-10'>
       {AboutContents.map((content) => (
         <AboutCard
           key={content.title}
