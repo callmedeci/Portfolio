@@ -1,26 +1,42 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes scrollLeft {
+  to {
+    left: -250px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.infinite-wrapper {
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.infinite {
+  width: 200px;
+  left: max(calc(200px * 5), 100%);
+  animation-name: scrollLeft;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.infinite-1 {
+  animation-delay: calc(30s / 5 * (5 - 1) * -1);
+}
+.infinite-2 {
+  animation-delay: calc(30s / 5 * (5 - 2) * -1);
+}
+.infinite-3 {
+  animation-delay: calc(30s / 5 * (5 - 3) * -1);
+}
+.infinite-4 {
+  animation-delay: calc(30s / 5 * (5 - 4) * -1);
+}
+.infinite-5 {
+  animation-delay: calc(30s / 5 * (5 - 5) * -1);
 }
