@@ -78,7 +78,7 @@ function Page() {
 
           <p className='text-zinc-400 text-lg tracking-wider'>
             Are you interested in working with me?{' '}
-            <span className='text-zinc-100'>Let's talk!</span>
+            <span className='text-zinc-100'>Let&apos;s talk!</span>
           </p>
 
           <ContactForm />
