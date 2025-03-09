@@ -27,8 +27,7 @@ function ContactForm() {
   function handleSubmit(prevState, formData) {
     formAction(prevState, formData);
 
-    if (formState?.status || formState?.message)
-      toast[formState.status](formState.message);
+    toast?.[formState?.status](formState?.message);
   }
 
   return (
