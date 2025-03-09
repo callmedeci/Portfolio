@@ -10,6 +10,7 @@ const OpenSans = Open_Sans({ display: 'swap', subsets: ['latin'] });
 export const metadata = {
   title: 'Yunes',
   description: 'Yunes portfolio',
+  authors: [{ name: 'Yunes' }],
 };
 
 export default function AppLayout({ children }) {

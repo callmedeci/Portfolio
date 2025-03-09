@@ -17,15 +17,18 @@ const links = [
 ];
 
 function AppNav() {
-  const [hash, setHash] = useHashChange();
+  const [hash, setHash] = useHashChange('#intro');
 
   return (
     <nav className='h-14 flex flex-1 justify-between items-center relative'>
       <Icon />
 
       <motion.ul className='hidden lg:flex gap-10 bg-zinc-800 rounded-2xl text-zinc-400 shadow-md p-1.5'>
-        {links.map((link, index) => (
+        {links.map((link, i) => (
           <motion.li
+            initial={{ y: (i + 1) * 5, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3, delay: i * 0.1 }}
             key={link.text}
             className={`${
               hash === link.href ? 'text-emerald-500' : ''

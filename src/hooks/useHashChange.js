@@ -1,25 +1,21 @@
-import { usePathname } from 'next/navigation';
+'use client';
+
 import { useEffect, useState } from 'react';
 
-export function useHashChange() {
-  const pathname = usePathname();
-  const [hash, setHash] = useState('#intro');
+export function useHashChange(value) {
+  const [hash, setHash] = useState(value);
 
-  useEffect(
-    function () {
-      setHash(window.location.hash);
+  useEffect(function () {
+    setHash(window.location.hash || value);
 
-      function handler() {
-        console.log('ok');
-        setHash(window.location.hash);
-      }
+    function handler() {
+      setHash(window.location.hash || value);
+    }
 
-      window.addEventListener('hashchange', handler);
+    window.addEventListener('hashchange', handler);
 
-      return () => window.removeEventListener('hashchange', handler);
-    },
-    [pathname]
-  );
+    return () => window.removeEventListener('hashchange', handler);
+  }, []);
 
   return [hash, setHash];
 }
