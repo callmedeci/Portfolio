@@ -8,7 +8,7 @@ import toast from 'react-hot-toast';
 const INITIAL_STATE = {
   zodErrors: null,
   data: {},
-  stauts: null,
+  status: null,
   message: '',
 };
 

@@ -25,17 +25,17 @@ export async function sendContactMessage(prevState, formData) {
       body: JSON.stringify(payload),
     });
 
-    if (!response) {
+    if (!response)
       return {
         ...prevState,
         data: { ...prevState, ...formObj },
         status: 'error',
         message: 'Failed to sent your message!',
       };
-    }
 
     return {
       ...prevState,
+      zodErrors: null,
       data: { ...prevState, ...formObj },
       status: 'success',
       message: 'Message successfully sent',
@@ -68,17 +68,17 @@ export async function sendEmailAddress(prevState, formData) {
       body: JSON.stringify(payload),
     });
 
-    if (!response) {
+    if (!response)
       return {
         ...prevState,
         data: { ...prevState, ...formObj },
         status: 'error',
         message: 'Failed to sent email address!',
       };
-    }
 
     return {
       ...prevState,
+      zodErrors: null,
       data: { ...prevState, ...formObj },
       status: 'success',
       message: 'Email address successfully sent',
