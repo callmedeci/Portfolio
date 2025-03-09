@@ -1,9 +1,20 @@
 import { ChevronRight, Code2 } from 'lucide-react';
-import Link from 'next/link';
+import { motion } from 'motion/react';
 
-function ProjectsCard({ date, title, description, liveLink, sourceLink }) {
+import Link from 'next/link';
+import Button from './Button';
+
+function ProjectsCard({
+  project: { date, title, description, liveLink, sourceLink },
+  index,
+}) {
   return (
-    <div className='transition-all duration-300 px-10 py-7 rounded-2xl shadow-sm hover:shadow-md flex flex-col gap-3 bg-zinc-800/10 hover:bg-zinc-800/50 ring ring-zinc-700/50'>
+    <motion.div
+      initial={{ opacity: 0, x: (index + 1) * 5, y: (index + 1) * 5 }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className='transition-all duration-300 px-5 sm:px-10 py-7 rounded-2xl shadow-sm hover:shadow-md flex flex-col gap-3 bg-zinc-800/10 hover:bg-zinc-800/50 ring ring-zinc-700/50'
+    >
       <time className='text-zinc-500 text-sm font-semibold after:bg-zinc-600 after:content-[""] after:absolute after:rounded-full after:w-0.5 after:h-5 after:-left-[5.5px] after:bottom-0 relative'>
         {date}
       </time>
@@ -14,23 +25,28 @@ function ProjectsCard({ date, title, description, liveLink, sourceLink }) {
 
       <p className='text-sm text-zinc-400 tracking-tight'>{description}</p>
 
-      <div className='flex flex-col sm:flex-row items-center gap-5'>
-        <Link
-          href={liveLink}
-          className='hover:bg-zinc-800 hover:text-emerald-500 hover:shadow-2xl px-3 py-2 rounded-lg transition-all flex items-center gap-1 text-emerald-400 text-sm xl:text-base'
-        >
-          <span>Live Preview</span>
-          <ChevronRight className='size-4' />
+      <div className='flex flex-col sm:flex-row items-center gap-2'>
+        <Link href={liveLink} className='w-full'>
+          <Button
+            icon={<ChevronRight className='size-4' />}
+            variant='link'
+            className='w-full'
+          >
+            <span>Live Preview</span>
+          </Button>
         </Link>
-        <Link
-          href={sourceLink}
-          className='hover:bg-zinc-800 hover:text-emerald-500 hover:shadow-2xl px-3 py-2 rounded-lg transition-all flex items-center gap-1 text-emerald-400 text-sm xl:text-base'
-        >
-          Source Code
-          <Code2 className='size-4' />
+
+        <Link href={sourceLink} className='w-full'>
+          <Button
+            icon={<Code2 className='size-4' />}
+            variant='link'
+            className='w-full'
+          >
+            Source Code
+          </Button>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

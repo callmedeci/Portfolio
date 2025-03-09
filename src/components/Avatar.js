@@ -5,7 +5,7 @@ function Avatar({ children, className }) {
   return (
     <div
       className={cn(
-        'size-20 xl:size-24 rounded-full overflow-hidden shadow-lg relative ring ring-zinc-700',
+        'size-12 xl:size-20 rounded-full overflow-hidden shadow-lg shadow-zinc-900/50 relative ring ring-zinc-700',
         className
       )}
     >

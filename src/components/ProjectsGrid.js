@@ -1,3 +1,7 @@
+'use client';
+
+import { motion } from 'motion/react';
+
 import ProjectsCard from './ProjectsCard';
 
 const projects = [
@@ -29,18 +33,16 @@ const projects = [
 
 function ProjectsGrid() {
   return (
-    <div className='flex flex-col gap-5 w-full'>
-      {projects.map((project) => (
-        <ProjectsCard
-          key={project.title}
-          date={project.date}
-          title={project.title}
-          description={project.description}
-          liveLink={project.liveLink}
-          sourceLink={project.sourceLink}
-        />
+    <motion.div
+      initial={{ opacity: 0, y: 65 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      className='flex flex-col gap-5 w-full'
+    >
+      {projects.map((project, i) => (
+        <ProjectsCard key={project.title} project={project} index={i} />
       ))}
-    </div>
+    </motion.div>
   );
 }
 

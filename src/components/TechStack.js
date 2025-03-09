@@ -1,4 +1,7 @@
+'use client';
 import Image from 'next/image';
+
+import { motion } from 'motion/react';
 
 const techList = [
   {
@@ -25,22 +28,33 @@ const techList = [
 
 function TechStack() {
   return (
-    <ul className='flex flex-col md:grid md:grid-cols-2 gap-5 mt-5'>
-      {techList.map((tech) => (
+    <motion.ul
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className='flex flex-col md:grid md:grid-cols-2 gap-5 mt-5'
+    >
+      {techList.map((tech, i) => (
         <TechItem
           key={tech.title}
           imageSrc={tech.imageSrc}
           title={tech.title}
           level={tech.level}
+          index={i}
         />
       ))}
-    </ul>
+    </motion.ul>
   );
 }
 
-function TechItem({ imageSrc, title, level }) {
+function TechItem({ imageSrc, title, level, index }) {
   return (
-    <li className='flex gap-2 items-center w-full'>
+    <motion.li
+      initial={{ opacity: 0, y: index * 15 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className='flex gap-2 items-center w-full'
+    >
       <div className='bg-zinc-800 p-2 w-max rounded-full overflow-hidden shadow-md'>
         <Image
           className='rounded-full'
@@ -54,7 +68,7 @@ function TechItem({ imageSrc, title, level }) {
         <span className='text-zinc-300'>{title}</span>
         <span className='text-zinc-400'>{level}</span>
       </div>
-    </li>
+    </motion.li>
   );
 }
 
