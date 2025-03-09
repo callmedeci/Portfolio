@@ -15,7 +15,7 @@ function Header() {
       <motion.p
         initial={{ opacity: 0, y: 20, color: 'var(--color-zinc-900)' }}
         animate={{ opacity: 1, y: 0, color: 'var(--color-zinc-400)' }}
-        transition={{ delay: 0.04, duration: 0.2 }}
+        transition={{ delay: 0.04, duration: 0.5 }}
         className='text-zinc-400 tracking-wide'
       >
         I’m Yunes, a software designer and entrepreneur based in New York City.

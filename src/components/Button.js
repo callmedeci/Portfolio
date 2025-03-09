@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 
 function Button({ children, className, icon, variant = 'main', onClick }) {
   const mainStyle =
-    'p-3 rounded-lg font-semibold cursor-pointer transition-all duration-300 gap-2 flex items-center';
+    'p-3 rounded-lg font-semibold cursor-pointer transition-all duration-300 gap-2 flex items-center group';
 
   const style = {
     main: 'bg-zinc-800  hover:bg-zinc-800/50  text-zinc-300 hover:text-emerald-500  justify-center shadow-md',

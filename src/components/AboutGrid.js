@@ -7,25 +7,25 @@ const AboutContents = [
     title: 'What Can I do?',
     description:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum ipsa alias rem dolorem doloremque recusandae numquam dolore?',
-    translate: { x: 5, y: 10 },
+    translate: { x: 15, y: 15 },
   },
   {
     title: 'What Is my hobbies?',
     description:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum ipsa alias rem dolorem doloremque recusandae numquam dolore?',
-    translate: { x: -8, y: 8 },
+    translate: { x: -15, y: 15 },
   },
   {
     title: 'Main languages?',
     description:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum ipsa alias rem dolorem doloremque recusandae numquam dolore?',
-    translate: { x: 7, y: 2 },
+    translate: { x: 15, y: -15 },
   },
   {
     title: 'Where to find me?',
     description:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum ipsa alias rem dolorem doloremque recusandae numquam dolore?',
-    translate: { x: 9, y: 6 },
+    translate: { x: -15, y: -15 },
   },
   {
     title: 'Where do I live?',
@@ -38,18 +38,6 @@ const AboutContents = [
     description:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum ipsa alias rem dolorem doloremque recusandae numquam dolore?',
     translate: { x: -9, y: 5 },
-  },
-  {
-    title: 'What to I do?',
-    description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum ipsa alias rem dolorem doloremque recusandae numquam dolore?',
-    translate: { x: 3, y: 7 },
-  },
-  {
-    title: 'How can you find me?',
-    description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum ipsa alias rem dolorem doloremque recusandae numquam dolore?',
-    translate: { x: 5, y: 1 },
   },
 ];
 

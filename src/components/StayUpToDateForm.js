@@ -3,7 +3,7 @@ import Button from './Button';
 
 function StayUpToDateForm() {
   return (
-    <form className='ring ring-zinc-700/50 p-3 sm:p-6 rounded-2xl shadow-sm'>
+    <form className='ring ring-zinc-700/50 p-3 sm:p-6 rounded-2xl shadow-sm shadow-zinc-950'>
       <div className='flex gap-1 items-center'>
         <Mail className='text-zinc-400 size-6' />
         <h4 className='text-lg font-semibold text-zinc-200 tracking-wide'>
@@ -21,7 +21,7 @@ function StayUpToDateForm() {
           placeholder='Email address'
         />
 
-        <Button icon={<Send className='size-4' />}>Send</Button>
+        <Button icon={<Send className='size-5' />}>Send</Button>
       </div>
     </form>
   );

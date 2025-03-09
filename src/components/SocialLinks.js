@@ -38,7 +38,7 @@ function LinkItem({ icon, href, index }) {
   return (
     <Link
       href={href}
-      className='text-zinc-300 hover:text-emerald-500 transition-all duration-300 bg-zinc-800 p-2 rounded-full shadow overflow-hidden group'
+      className='text-zinc-300 hover:text-emerald-500 transition-all duration-300 bg-zinc-800 p-2 rounded-full shadow-md shadow-zinc-950 overflow-hidden group'
     >
       <motion.div
         className='group-hover:rotate-12 group-hover:scale-100 duration-300 transition-all scale-95'
@@ -46,7 +46,7 @@ function LinkItem({ icon, href, index }) {
         animate={{ y: 0, opacity: 1 }}
         transition={{
           delay: index * 0.1,
-          duration: 0.2,
+          duration: 0.5,
         }}
       >
         {icon}
