@@ -2,14 +2,16 @@ import { Send } from 'lucide-react';
 import Button from './Button';
 import Input from './Input';
 
+import { sendContactMessage } from '@/lib/action';
 import { motion } from 'motion/react';
 
 function ContactForm() {
   return (
-    <form className='flex flex-col gap-5 mt-5'>
-      <Input name='name' placeholder='Your name' />
-      <Input name='email' placeholder='Your email' />
+    <form action={sendContactMessage} className='flex flex-col gap-5 mt-5'>
+      <Input id='name' name='name' placeholder='Your name' />
+      <Input id='email' name='email' placeholder='Your email' />
       <motion.textarea
+        id='message'
         initial={{ opacity: 0, x: 5 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.2 }}

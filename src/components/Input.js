@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 import { motion } from 'motion/react';
 
-function Input({ name, placeholder, className }) {
+function Input({ name, placeholder, className, ...props }) {
   return (
     <motion.input
       initial={{ opacity: 0, x: -8 }}
@@ -13,6 +13,7 @@ function Input({ name, placeholder, className }) {
         className
       )}
       placeholder={placeholder}
+      {...props}
     />
   );
 }

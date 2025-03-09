@@ -23,7 +23,7 @@ function Icon() {
             initial={{ opacity: 0, x: 50, visibility: 'hidden' }}
             animate={{ opacity: 1, x: 55, visibility: 'visible' }}
             exit={{ opacity: 0, x: 50, visibility: 'hidden' }}
-            className='text-sm md:text-base xl:text-lg font-medium text-zinc-200 absolute w-max 2xl:translate-x-4'
+            className='text-base xl:text-lg font-semibold text-zinc-200 absolute w-max xl:translate-x-4 tracking-tight'
           >
             {'Yunes Maghsoudie'.split('').map((letter, i) => (
               <motion.span
