@@ -4,10 +4,21 @@ import Input from './Input';
 
 import { sendContactMessage } from '@/lib/action';
 import { motion } from 'motion/react';
+import toast from 'react-hot-toast';
 
 function ContactForm() {
+  async function handleSubmit(formData) {
+    try {
+      await sendContactMessage(formData);
+
+      toast.success('Message successfully sent!');
+    } catch (error) {
+      toast.error('Failed to sent, please try again');
+    }
+  }
+
   return (
-    <form action={sendContactMessage} className='flex flex-col gap-5 mt-5'>
+    <form action={handleSubmit} className='flex flex-col gap-5 mt-5'>
       <Input id='name' name='name' placeholder='Your name' />
       <Input id='email' name='email' placeholder='Your email' />
       <motion.textarea

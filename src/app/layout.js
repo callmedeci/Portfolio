@@ -3,6 +3,9 @@ import { Open_Sans } from 'next/font/google';
 import AppNav from '@/components/AppNav';
 import Footer from '@/components/Footer';
 
+import { CircleCheck, CircleX } from 'lucide-react';
+import { Toaster } from 'react-hot-toast';
+
 import './globals.css';
 
 const OpenSans = Open_Sans({ display: 'swap', subsets: ['latin'] });
@@ -23,6 +26,22 @@ export default function AppLayout({ children }) {
           <div className='p-8 lg:py-12 lg:px-18'>
             <AppNav />
 
+            <Toaster
+              reverseOrder={false}
+              position='top-right'
+              toastOptions={{
+                style: {
+                  backgroundColor: 'var(--color-zinc-800)',
+                  color: 'var(--color-zinc-200)',
+                },
+                success: {
+                  icon: <CircleCheck className='size-7 text-green-500' />,
+                },
+                error: {
+                  icon: <CircleX className='size-7 text-red-500' />,
+                },
+              }}
+            />
             {children}
           </div>
           <Footer />

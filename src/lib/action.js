@@ -15,9 +15,7 @@ export async function sendContactMessage(formData) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
     });
-
-    console.log('Successfully sent!');
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 }
