@@ -1,8 +1,8 @@
 import { Menu } from 'lucide-react';
-import Button from './Button';
-import Modal from './Modal';
 import { motion } from 'motion/react';
 import Link from 'next/link';
+import Modal from './ui/Modal';
+import Button from './ui/Button';
 
 function MobileNav({ links, activeHash, changeHash }) {
   return (

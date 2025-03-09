@@ -2,7 +2,7 @@
 
 import SocialLinks from '../SocialLinks';
 import { motion } from 'motion/react';
-import TypingEffect from '../TypingEffect';
+import TypingEffect from '../ui/TypingEffect';
 
 function Header() {
   return (

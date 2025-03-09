@@ -4,7 +4,7 @@ import { CpuIcon, Download, MoreHorizontal } from 'lucide-react';
 import ProjectsGrid from '../ProjectsGrid';
 import StayUpToDateForm from '../StayUpToDateForm';
 import TechStack from '../TechStack';
-import Button from '../Button';
+import Button from '../ui/Button';
 import Link from 'next/link';
 
 import { motion } from 'motion/react';

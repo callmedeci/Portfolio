@@ -1,4 +1,4 @@
-import InfinitieScroll from '@/components/InfinitieScroll';
+import InfinitieScroll from '@/components/ui/InfinitieScroll';
 import About from '@/components/shared/About';
 import Contact from '@/components/shared/Contact';
 import Header from '@/components/shared/Header';

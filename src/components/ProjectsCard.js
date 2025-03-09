@@ -2,7 +2,7 @@ import { ChevronRight, Code2 } from 'lucide-react';
 import { motion } from 'motion/react';
 
 import Link from 'next/link';
-import Button from './Button';
+import Button from './ui/Button';
 
 function ProjectsCard({
   project: { date, title, description, liveLink, sourceLink },

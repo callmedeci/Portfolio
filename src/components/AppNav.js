@@ -4,10 +4,10 @@ import Link from 'next/link';
 
 import { motion } from 'motion/react';
 
-import Icon from '@/components/Icon';
 import { useHashChange } from '@/hooks/useHashChange';
 import MobileNav from './MobileNav';
 import ThemeToggle from './ThemeToggle';
+import Icon from './ui/Icon';
 
 const links = [
   { href: '#intro', text: 'Intro' },
