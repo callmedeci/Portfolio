@@ -25,7 +25,21 @@ export async function sendContactMessage(prevState, formData) {
       body: JSON.stringify(payload),
     });
 
-    if (!response) throw new Error('Failed to send your message');
+    if (!response) {
+      return {
+        ...prevState,
+        data: { ...prevState, ...formObj },
+        status: 'error',
+        message: 'Failed to sent your message!',
+      };
+    }
+
+    return {
+      ...prevState,
+      data: { ...prevState, ...formObj },
+      status: 'success',
+      message: 'Message successfully sent',
+    };
   } catch (error) {
     throw error;
   }
@@ -54,7 +68,21 @@ export async function sendEmailAddress(prevState, formData) {
       body: JSON.stringify(payload),
     });
 
-    if (!response) throw new Error('Failed to send your message');
+    if (!response) {
+      return {
+        ...prevState,
+        data: { ...prevState, ...formObj },
+        status: 'error',
+        message: 'Failed to sent email address!',
+      };
+    }
+
+    return {
+      ...prevState,
+      data: { ...prevState, ...formObj },
+      status: 'success',
+      message: 'Email address successfully sent',
+    };
   } catch (error) {
     throw error;
   }

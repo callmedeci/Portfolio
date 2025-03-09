@@ -1,9 +1,35 @@
-import { Mail, Send } from 'lucide-react';
-import Button from './Button';
+import { sendEmailAddress } from '@/lib/action';
+import { Mail } from 'lucide-react';
+import { useActionState } from 'react';
+import SubmitButton from './SubmitButton';
+import FormFiled from './ui/FormFiled';
+import toast from 'react-hot-toast';
+
+const INITIAL_STATE = {
+  zodErrors: null,
+  data: {},
+  stauts: null,
+  message: '',
+};
 
 function StayUpToDateForm() {
+  const [formState, formAction] = useActionState(
+    sendEmailAddress,
+    INITIAL_STATE
+  );
+
+  function handleSubmit(prevState, formData) {
+    formAction(prevState, formData);
+
+    if (formState?.status || formState?.message)
+      toast[formState.status](formState.message);
+  }
+
   return (
-    <form className='ring ring-zinc-700/50 p-3 sm:p-6 rounded-2xl shadow-sm shadow-zinc-950'>
+    <form
+      action={(prevState, formData) => handleSubmit(prevState, formData)}
+      className='ring ring-zinc-700/50 p-3 sm:p-6 rounded-2xl shadow-sm shadow-zinc-950'
+    >
       <div className='flex gap-1 items-center'>
         <Mail className='text-zinc-400 size-6' />
         <h4 className='text-lg font-semibold text-zinc-200 tracking-wide'>
@@ -15,13 +41,16 @@ function StayUpToDateForm() {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
       </p>
 
-      <div className='flex items-center gap-5 mt-4'>
-        <input
-          className='bg-inherit ring-2 ring-zinc-700/50 w-full rounded-md px-5 py-3 focus:outline-none focus:ring-emerald-500 transition-all shadow-md'
+      <div className='flex items-center gap-5 mt-4 h-24'>
+        <FormFiled
+          name='email'
           placeholder='Email address'
+          className='w-full h-12'
+          defaultValue={formState.data.email}
+          error={formState.zodErrors?.fieldErrors.email}
         />
 
-        <Button icon={<Send className='size-5' />}>Send</Button>
+        <SubmitButton pendingLabel='Sending...'>Send</SubmitButton>
       </div>
     </form>
   );
