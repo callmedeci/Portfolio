@@ -2,7 +2,7 @@
 
 import { sendContactMessage } from '@/lib/action';
 import { motion } from 'motion/react';
-import { useActionState } from 'react';
+import { useActionState, useEffect } from 'react';
 import SubmitButton from './SubmitButton';
 import FormFiled from './ui/FormFiled';
 import toast from 'react-hot-toast';
@@ -24,17 +24,15 @@ function ContactForm() {
     INITIAL_STATE
   );
 
-  function handleSubmit(prevState, formData) {
-    formAction(prevState, formData);
-
-    toast?.[formState?.status](formState?.message);
-  }
+  useEffect(
+    function () {
+      if (formState.status) toast[formState.status](formState.message);
+    },
+    [formState.status]
+  );
 
   return (
-    <form
-      action={(prevState, formData) => handleSubmit(prevState, formData)}
-      className='flex flex-col gap-5 mt-5'
-    >
+    <form action={formAction} className='flex flex-col gap-5 mt-5'>
       <FormFiled
         defaultValue={formState.data.name}
         error={formState.zodErrors?.fieldErrors?.name}

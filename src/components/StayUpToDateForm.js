@@ -1,6 +1,6 @@
 import { sendEmailAddress } from '@/lib/action';
 import { Mail } from 'lucide-react';
-import { useActionState } from 'react';
+import { useActionState, useEffect } from 'react';
 import SubmitButton from './SubmitButton';
 import FormFiled from './ui/FormFiled';
 import toast from 'react-hot-toast';
@@ -18,15 +18,16 @@ function StayUpToDateForm() {
     INITIAL_STATE
   );
 
-  function handleSubmit(prevState, formData) {
-    formAction(prevState, formData);
-
-    toast?.[formState?.status](formState?.message);
-  }
+  useEffect(
+    function () {
+      if (formState.status) toast[formState.status](formState.message);
+    },
+    [formState.status]
+  );
 
   return (
     <form
-      action={(prevState, formData) => handleSubmit(prevState, formData)}
+      action={formAction}
       className='ring ring-zinc-700/50 p-3 sm:p-6 rounded-2xl shadow-sm shadow-zinc-950'
     >
       <div className='flex gap-1 items-center'>

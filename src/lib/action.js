@@ -36,7 +36,7 @@ export async function sendContactMessage(prevState, formData) {
     return {
       ...prevState,
       zodErrors: null,
-      data: { ...prevState, ...formObj },
+      data: {},
       status: 'success',
       message: 'Message successfully sent',
     };
@@ -77,9 +77,8 @@ export async function sendEmailAddress(prevState, formData) {
       };
 
     return {
-      ...prevState,
       zodErrors: null,
-      data: { ...prevState, ...formObj },
+      data: {},
       status: 'success',
       message: 'Email address successfully sent',
     };
