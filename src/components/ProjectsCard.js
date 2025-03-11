@@ -10,6 +10,7 @@ function ProjectsCard({
 }) {
   return (
     <motion.div
+      viewport={{ once: true }}
       initial={{ opacity: 0, x: (index + 1) * 5, y: (index + 1) * 5 }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}

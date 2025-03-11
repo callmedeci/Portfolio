@@ -9,6 +9,7 @@ function About() {
       className='w-full flex flex-col mt-4 py-24 border-t border-zinc-700'
     >
       <motion.h2
+        viewport={{ once: true }}
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}

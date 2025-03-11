@@ -29,6 +29,7 @@ const techList = [
 function TechStack() {
   return (
     <motion.ul
+      viewport={{ once: true }}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -50,6 +51,7 @@ function TechStack() {
 function TechItem({ imageSrc, title, level, index }) {
   return (
     <motion.li
+      viewport={{ once: true }}
       initial={{ opacity: 0, y: index * 15 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
