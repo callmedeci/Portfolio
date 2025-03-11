@@ -16,7 +16,7 @@ export async function sendContactMessage(prevState, formData) {
       };
 
     const payload = {
-      content: `**New Contact Form Submission**\n\n**Name:** ${formObj.name}\n**Email:** ${formObj.email}\n**Message:**\n${formData.message}`,
+      content: `**New Contact Form Submission**\n\n**Name:** ${formObj.name}\n**Email:** ${formObj.email}\n**Message:**\n${formObj.message}`,
     };
 
     const response = await fetch(process.env.DISCORD_WEBHOOK_URL, {
