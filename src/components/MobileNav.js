@@ -4,11 +4,11 @@ import Link from 'next/link';
 import Modal from './ui/Modal';
 import Button from './ui/Button';
 
-function MobileNav({ links, activeHash, changeHash }) {
+function MobileNav({ links, activeHash }) {
   return (
     <Modal>
       <Modal.Open id='mobileNav'>
-        <Button variant='toggle' className='block lg:hidden'>
+        <Button variant='toggle' className='shadow-zinc-950 block lg:hidden'>
           <Menu className='size-5 md:size-7' />
         </Button>
       </Modal.Open>
@@ -29,8 +29,7 @@ function MobileNav({ links, activeHash, changeHash }) {
               className='py-2'
             >
               <Link
-                href={link.href}
-                onClick={() => changeHash(`${link.href}`)}
+                href={`#${link.href}`}
                 className={`${
                   activeHash === link.href
                     ? 'text-emerald-500 font-semibold'

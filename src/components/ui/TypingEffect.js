@@ -1,6 +1,6 @@
 'use client';
 
-import { delay, motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
 function TypingEffect({ text }) {

@@ -1,9 +1,8 @@
 import Image from 'next/image';
-import { FaAccusoft } from 'react-icons/fa';
 
 function InfinitieScroll() {
   return (
-    <div className='infinite-wrapper relative my-26 h-24 w-full overflow-hidden'>
+    <div className='infinite-wrapper relative mt-22 h-24 w-full overflow-hidden'>
       <div className='infinite infinite-1 absolute flex items-center justify-center gap-2'>
         <Image src='/svg/react.svg' width={60} height={60} alt='react' />
         <span className='text-3xl font-mono font-medium'>React</span>

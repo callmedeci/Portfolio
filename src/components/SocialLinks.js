@@ -1,9 +1,7 @@
-'use client';
-
 import { Mail } from 'lucide-react';
+import { motion } from 'motion/react';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaTelegram } from 'react-icons/fa';
-import { motion } from 'motion/react';
 
 const links = [
   {
