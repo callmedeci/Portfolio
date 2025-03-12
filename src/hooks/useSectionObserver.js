@@ -5,7 +5,6 @@ import { useEffect, useRef } from 'react';
 export function useSectionObserver(initialValue) {
   const ref = useRef(initialValue);
   const { setHash } = useHash();
-  g;
   const [innerWidth] = useWindowWidth(0);
 
   const options = {

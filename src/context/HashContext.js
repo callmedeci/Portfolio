@@ -2,18 +2,22 @@
 
 import { useHashState } from '@/hooks/useHashState';
 import { useSectionObserver } from '@/hooks/useSectionObserver';
-import { createContext, use } from 'react';
+import { createContext, useContext } from 'react';
 
 const HashContext = createContext();
 
 function HashProvider({ children }) {
   const { hash, setHash } = useHashState('');
 
-  return <HashContext value={{ hash, setHash }}>{children}</HashContext>;
+  return (
+    <HashContext.Provider value={{ hash, setHash }}>
+      {children}
+    </HashContext.Provider>
+  );
 }
 
 export function useHash() {
-  const context = use(HashContext);
+  const context = useContext(HashContext);
 
   if (!context) throw new Error('Hook used outside the provider');
 
