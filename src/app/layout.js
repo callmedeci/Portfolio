@@ -6,12 +6,16 @@ import Footer from '@/components/Footer';
 import { CircleCheck, CircleX } from 'lucide-react';
 import { Toaster } from 'react-hot-toast';
 
+import URLProvider from '@/context/HashContext';
 import './globals.css';
 
 const OpenSans = Open_Sans({ display: 'swap', subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Yunes',
+  title: {
+    template: 'Yunes/%s',
+    default: 'Yunes/intro',
+  },
   description: 'Yunes portfolio',
   authors: [{ name: 'Yunes' }],
 };
@@ -24,25 +28,27 @@ export default function AppLayout({ children }) {
       >
         <div className='justify-self-center w-full max-w-7xl bg-zinc-900 relative'>
           <div className='p-8 lg:py-12 lg:px-18'>
-            <AppNav />
+            <URLProvider>
+              <AppNav />
 
-            <Toaster
-              reverseOrder={false}
-              position='top-right'
-              toastOptions={{
-                style: {
-                  backgroundColor: 'var(--color-zinc-800)',
-                  color: 'var(--color-zinc-200)',
-                },
-                success: {
-                  icon: <CircleCheck className='size-7 text-green-500' />,
-                },
-                error: {
-                  icon: <CircleX className='size-7 text-red-500' />,
-                },
-              }}
-            />
-            {children}
+              <Toaster
+                reverseOrder={false}
+                position='top-right'
+                toastOptions={{
+                  style: {
+                    backgroundColor: 'var(--color-zinc-800)',
+                    color: 'var(--color-zinc-200)',
+                  },
+                  success: {
+                    icon: <CircleCheck className='size-7 text-green-500' />,
+                  },
+                  error: {
+                    icon: <CircleX className='size-7 text-red-500' />,
+                  },
+                }}
+              />
+              {children}
+            </URLProvider>
           </div>
           <Footer />
         </div>
