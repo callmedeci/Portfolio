@@ -51,11 +51,10 @@ function ThemeToggle() {
     <Button
       onClick={toggleDark}
       variant='toggle'
-      className='shadow-zinc-400 dark:shadow-zinc-950 w-14 h-14 flex flex-col items-center justify-center'
+      className='shadow-zinc-400 dark:shadow-zinc-950 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center'
     >
       <motion.svg
-        width='48'
-        height='48'
+        className='size-8 md:size-14'
         viewBox='0 0 48 48'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
