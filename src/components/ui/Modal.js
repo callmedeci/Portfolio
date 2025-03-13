@@ -59,7 +59,7 @@ function Window({ children, id, className }) {
         animate={{ opacity: 1, y: '0px' }}
         ref={ref}
         className={cn(
-          'h-max bg-zinc-900 p-5 rounded-2xl shadow-md relative ring ring-zinc-700 z-50',
+          'h-max bg-zinc-200 dark:bg-zinc-900 p-5 rounded-2xl shadow-md relative ring ring-zinc-100 dark:ring-zinc-700 z-50',
           className
         )}
       >

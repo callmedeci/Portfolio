@@ -15,14 +15,14 @@ function Projects() {
     <HashProvider.Section>
       <div
         id='projects'
-        className='flex flex-col items-center lg:grid lg:grid-cols-2 gap-5 border-t border-zinc-700 my-26 py-26 min-h-160'
+        className='flex flex-col items-center lg:grid lg:grid-cols-2 gap-5 border-t border-zinc-400 dark:border-zinc-700 my-26 py-26 min-h-160'
       >
         <motion.h2
           viewport={{ once: true }}
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className='col-span-full text-2xl md:text-4xl text-zinc-200 font-bold after:bg-emerald-500 after:content-[""] after:absolute after:w-26 after:h-0.5 after:left-0 after:bottom-0 relative self-start'
+          className='col-span-full text-2xl md:text-4xl text-zinc-800 dark:text-zinc-200 font-bold after:bg-emerald-500 after:content-[""] after:absolute after:w-26 after:h-0.5 after:left-0 after:-bottom-1.5 relative self-start'
         >
           Projects
         </motion.h2>
@@ -38,10 +38,10 @@ function Projects() {
         >
           <StayUpToDateForm />
 
-          <div className='ring ring-zinc-700/50 p-6 rounded-2xl shadow-sm shadow-zinc-950'>
+          <div className='ring ring-zinc-400/50 dark:ring-zinc-700/50 p-6 rounded-2xl shadow-sm shadow-zinc-400 dark:shadow-zinc-950'>
             <div className='flex items-center gap-1'>
-              <CpuIcon className='text-zinc-400 size-6' />
-              <h4 className='text-lg font-semibold text-zinc-200 tracking-wide'>
+              <CpuIcon className='text-zinc-500 dark:text-zinc-400 size-6' />
+              <h4 className='text-lg font-semibold text-zinc-700 dark:text-zinc-200 tracking-wide'>
                 Main languages
               </h4>
             </div>

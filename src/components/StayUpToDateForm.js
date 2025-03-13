@@ -28,21 +28,22 @@ function StayUpToDateForm() {
   return (
     <form
       action={formAction}
-      className='ring ring-zinc-700/50 p-3 sm:p-6 rounded-2xl shadow-sm shadow-zinc-950'
+      className='ring ring-zinc-400/50 dark:ring-zinc-700/50 p-3 sm:p-6 rounded-2xl shadow-sm shadow-zinc-400 dark:shadow-zinc-950'
     >
       <div className='flex gap-1 items-center'>
-        <Mail className='text-zinc-400 size-6' />
-        <h4 className='text-lg font-semibold text-zinc-200 tracking-wide'>
+        <Mail className='text-zinc-500 dark:text-zinc-400 size-6' />
+        <h4 className='text-lg font-semibold text-zinc-700 dark:text-zinc-200 tracking-wide'>
           Stay up to date
         </h4>
       </div>
 
-      <p className='mt-2 text-sm text-zinc-400'>
+      <p className='mt-2 text-sm text-zinc-600 dark:text-zinc-400'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
       </p>
 
-      <div className='flex items-center gap-5 mt-4 h-24'>
+      <div className='flex items-center gap-5 mt-4'>
         <FormFiled
+          showError={false}
           name='email'
           placeholder='Email address'
           className='w-full h-12'

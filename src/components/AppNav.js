@@ -23,7 +23,7 @@ function AppNav() {
     <nav className='h-14 flex flex-1 justify-between items-center relative'>
       <Icon />
 
-      <motion.ul className='hidden lg:flex gap-10 bg-zinc-800 rounded-2xl text-zinc-400 shadow-md p-1.5 fixed lg:left-1/3 xl:left-2/5 z-50 ring ring-zinc-900'>
+      <motion.ul className='hidden lg:flex gap-10 bg-zinc-300 dark:bg-zinc-800 rounded-2xl text-zinc-800 dark:text-zinc-400 shadow-md p-1.5 fixed lg:left-1/3 xl:left-2/5 z-50 ring ring-zinc-200 dark:ring-zinc-900'>
         {links.map((link, i) => (
           <motion.li
             initial={{ y: (i + 1) * 5, opacity: 0 }}
@@ -42,7 +42,7 @@ function AppNav() {
               <motion.span
                 layout
                 layoutId='highLigh'
-                className='absolute inset-0 bg-zinc-900/80 rounded-2xl shadow-md shadow-zinc-900'
+                className='absolute inset-0 bg-zinc-200/80 dark:bg-zinc-900/80 rounded-2xl shadow-md shadow-zinc-400 dark:shadow-zinc-900'
               ></motion.span>
             )}
           </motion.li>

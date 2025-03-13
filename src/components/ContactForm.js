@@ -56,7 +56,7 @@ function ContactForm() {
           name='message'
           placeholder='Your Message'
           defaultValue={formState.data.message}
-          className='bg-inherit ring-2 ring-zinc-700/50 rounded-md px-5 py-3 focus:outline-none focus:ring-emerald-500 transition-all shadow-md w-full h-36'
+          className='bg-inherit ring-2 ring-zinc-400/50 dark:ring-zinc-700/50 rounded-md px-5 py-3 focus:outline-none focus:ring-emerald-500 transition-all shadow-md text-zinc-800 dark:text-zinc-100 w-full h-36'
         />
         {formState.zodErrors?.fieldErrors?.message && (
           <span className='text-sm tracking-wide font-bold text-rose-700 ml-2'>

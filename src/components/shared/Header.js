@@ -15,10 +15,10 @@ function Header() {
         <TypingEffect text='Software designer, founder, and amateur astronaut.' />
 
         <motion.p
-          initial={{ opacity: 0, y: 20, color: 'var(--color-zinc-900)' }}
-          animate={{ opacity: 1, y: 0, color: 'var(--color-zinc-400)' }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.04, duration: 0.5 }}
-          className='text-zinc-400 tracking-wide'
+          className='text-zinc-600 dark:text-zinc-400 tracking-wide'
         >
           I’m Yunes, a software designer and entrepreneur based in New York
           City. I’m the founder and CEO of Planetaria, where we develop

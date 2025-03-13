@@ -9,7 +9,7 @@ function TypingEffect({ text }) {
   return (
     <h1
       ref={ref}
-      className='text-2xl md:text-5xl font-bold text-zinc-100 text-center'
+      className='text-2xl md:text-5xl font-bold text-zinc-800 dark:text-zinc-100 text-center'
     >
       {text.split('').map((letter, i) => (
         <motion.span

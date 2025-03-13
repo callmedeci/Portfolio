@@ -57,7 +57,7 @@ function TechItem({ imageSrc, title, level, index }) {
       transition={{ duration: 0.5 }}
       className='flex gap-2 items-center w-full'
     >
-      <div className='bg-zinc-800 p-2 w-max rounded-full overflow-hidden shadow-md'>
+      <div className='bg-zinc-200 dark:bg-zinc-800 p-2 w-max rounded-full overflow-hidden shadow-md'>
         <Image
           className='rounded-full'
           src={imageSrc}
@@ -67,8 +67,8 @@ function TechItem({ imageSrc, title, level, index }) {
         />
       </div>
       <div className='flex flex-col text-sm font-semibold capitalize'>
-        <span className='text-zinc-300'>{title}</span>
-        <span className='text-zinc-400'>{level}</span>
+        <span className='text-zinc-500 dark:text-zinc-300'>{title}</span>
+        <span className='text-zinc-600 dark:text-zinc-400'>{level}</span>
       </div>
     </motion.li>
   );

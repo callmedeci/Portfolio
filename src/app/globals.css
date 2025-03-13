@@ -6,6 +6,8 @@
   }
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 .infinite-wrapper {
   mask-image: linear-gradient(
     to right,
