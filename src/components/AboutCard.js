@@ -12,7 +12,7 @@ function AboutCard({ content: { title, description, translate }, index }) {
       <h4 className='text-lg md:text-2xl font-semibold text-zinc-800/60 dark:text-zinc-200/60  group-hover:text-zinc-800/90 dark:group-hover:text-zinc-200 transition-colors duration-300'>
         {title}
       </h4>
-      <p className='text-zinc-500 text-sm group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors duration-300'>
+      <p className='text-zinc-500 text-sm md:text-base group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors duration-300'>
         {description}
       </p>
     </motion.div>
