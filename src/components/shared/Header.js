@@ -20,9 +20,9 @@ function Header() {
           transition={{ delay: 0.04, duration: 0.5 }}
           className='text-zinc-600 dark:text-zinc-400 tracking-wide'
         >
-          I'm Yones, a web developer based in Shiraz. That one guy who’s always
-          trying out different technologies, exploring everywhere to find
-          something new that fits within my toolbox :D
+          I&apos;m Yones, a web developer based in Shiraz. That one guy
+          who&apos;s always trying out different technologies, exploring
+          everywhere to find something new that fits within my toolbox :D
         </motion.p>
 
         <SocialLinks />
