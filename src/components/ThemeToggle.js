@@ -51,7 +51,7 @@ function ThemeToggle() {
     <Button
       onClick={toggleDark}
       variant='toggle'
-      className='shadow-zinc-400 dark:shadow-zinc-950 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center'
+      className='shadow-zinc-400 dark:shadow-zinc-950 size-11 md:size-13 flex items-center justify-center'
     >
       <motion.svg
         className='size-8 md:size-12'

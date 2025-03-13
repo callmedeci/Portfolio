@@ -49,7 +49,7 @@ function AppNav() {
         ))}
       </motion.ul>
 
-      <div className='flex gap-1 fixed lg:relative right-5 z-10'>
+      <div className='flex items-center gap-1 fixed lg:relative right-5 z-10'>
         <MobileNav activeHash={hash} links={links} />
 
         <ThemeToggle />
