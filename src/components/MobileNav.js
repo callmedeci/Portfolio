@@ -10,7 +10,7 @@ function MobileNav({ links, activeHash }) {
       <Modal.Open id='mobileNav'>
         <Button
           variant='toggle'
-          className='shadow-zinc-400 dark:shadow-zinc-950 block lg:hidden'
+          className='shadow-zinc-400 dark:shadow-zinc-950 block md:hidden'
         >
           <Menu className='size-5 md:size-7' />
         </Button>

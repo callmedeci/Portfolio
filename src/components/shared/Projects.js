@@ -10,6 +10,33 @@ import Button from '../ui/Button';
 import HashProvider from '@/context/HashContext';
 import { motion } from 'motion/react';
 
+const projects = [
+  {
+    created_at: '2025-01-24T15:52:49Z',
+    name: 'Wild Oasis Hotel Dashboard',
+    description:
+      'A React powered hotel management dashboard for managing bookings, cabins, and settings—smooth, efficient, and feature-packed. (Use Email: vabaj41481@perceint.com Password: 12345678 to log in)',
+    homepage: 'https://my-wild-oasis-dashboard.netlify.app',
+    html_url: 'https://github.com/callmedeci/The-wild-oasis',
+  },
+  {
+    created_at: '2025-01-24T15:52:49Z',
+    name: 'Wild Oasis: Your Perfect Getaway',
+    description:
+      'A beautifully crafted Next.js website designed for the Wild Oasis Hotel. it offers a seamless booking experience with secure authentication, modern UI, and a smooth, intuitive design.',
+    homepage: 'https://the-wild-oasis-website-production.vercel.app',
+    html_url: 'https://github.com/callmedeci/The-wild-oasis-website',
+  },
+  {
+    created_at: '2025-01-24T15:52:49Z',
+    name: 'Snapgram: Share, Like, and Save Moments',
+    description:
+      'A social media app where you can create posts, like and save content, explore other users on the People page, and seamlessly sign in and out. Simple, smooth, and built for sharing.',
+    homepage: 'https://snapgram-psi-ten.vercel.app',
+    html_url: 'https://github.com/callmedeci/Snapgram',
+  },
+];
+
 function Projects() {
   return (
     <HashProvider.Section>
@@ -27,7 +54,7 @@ function Projects() {
           Projects
         </motion.h2>
 
-        <ProjectsGrid />
+        <ProjectsGrid projects={projects} />
 
         <motion.div
           viewport={{ once: true }}
@@ -57,14 +84,17 @@ function Projects() {
               >
                 Download CV
               </Button>
-              <Button
-                icon={
-                  <MoreHorizontal className='size-5 group-hover:size-6 transition-all' />
-                }
-                className='flex-1 gap-1'
-              >
-                <Link href='/projects'>More Projects</Link>
-              </Button>
+
+              <Link href='/projects' className='flex-1 gap-1'>
+                <Button
+                  icon={
+                    <MoreHorizontal className='size-5 group-hover:size-6 transition-all' />
+                  }
+                  className='w-full'
+                >
+                  More Projects
+                </Button>
+              </Link>
             </div>
           </div>
         </motion.div>

@@ -3,36 +3,40 @@ import { motion } from 'motion/react';
 
 import Link from 'next/link';
 import Button from './ui/Button';
+import { format } from 'date-fns';
 
-function ProjectsCard({
-  project: { date, title, description, liveLink, sourceLink },
-  index,
-}) {
+function ProjectsCard({ project, index }) {
+  const { created_at, name, description, homepage, html_url } = project;
+
   return (
     <motion.div
       viewport={{ once: true }}
-      initial={{ opacity: 0, x: (index + 1) * 5, y: (index + 1) * 5 }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className='transition-all duration-300 px-5 sm:px-10 py-7 rounded-2xl shadow-sm hover:shadow-md flex flex-col gap-3 bg-zinc-200/10 dark:bg-zinc-800/10 hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50 ring ring-zinc-400/50 dark:ring-zinc-700/50 shadow-zinc-300 dark:shadow-zinc-950'
+      className='group relative flex flex-col gap-3 rounded-2xl bg-zinc-200/10 px-5 py-7 shadow-sm ring shadow-zinc-300 ring-zinc-400/50 transition-all duration-300 hover:bg-zinc-200/50 hover:shadow-md sm:px-10 dark:bg-zinc-800/10 dark:shadow-zinc-950 dark:ring-zinc-700/50 dark:hover:bg-zinc-800/50'
     >
-      <time className='text-zinc-500 text-sm font-semibold after:bg-zinc-400 dark:after:bg-zinc-600 after:content-[""] after:absolute after:rounded-full after:w-0.5 after:h-5 after:-left-[5.5px] after:bottom-0 relative'>
-        {date}
+      <Link
+        href={`projects/${name}`}
+        className='absolute top-0 left-0 z-30 h-full w-full'
+      />
+      <time className='relative text-sm font-semibold text-zinc-500 after:absolute after:bottom-0 after:-left-[5.5px] after:h-5 after:w-0.5 after:rounded-full after:bg-zinc-400 after:content-[""] dark:after:bg-zinc-600'>
+        {format(new Date(created_at), 'd MMMM yyyy')}
       </time>
 
-      <h4 className='text-lg font-medium text-zinc-800/95 dark:text-zinc-200/95 tracking-wide'>
-        {title}
+      <h4 className='text-lg font-medium tracking-wide text-zinc-800/80 capitalize transition-colors group-hover:text-zinc-800 dark:text-zinc-200/80 dark:group-hover:text-zinc-200'>
+        {name.replaceAll('-', ' ')}
       </h4>
 
-      <p className='text-sm text-zinc-600 dark:text-zinc-400 tracking-tight'>
-        {description}
+      <p className='h-24 text-sm tracking-tight text-zinc-600 transition-colors group-hover:text-zinc-700 dark:text-zinc-400 group-hover:dark:text-zinc-300'>
+        {description.split('').slice(0, 200).join('')}...
       </p>
 
-      <div className='flex flex-col sm:flex-row items-center gap-2'>
-        <Link target='_blank' href={liveLink} className='w-full'>
+      <div className='z-50 flex flex-col items-center gap-2 sm:flex-row'>
+        <Link target='_blank' href={homepage} className='w-full'>
           <Button
             icon={
-              <ChevronRight className='size-4 group-hover:size-5 transition-all' />
+              <ChevronRight className='size-4 transition-all group-hover:size-5' />
             }
             variant='link'
             className='w-full'
@@ -41,10 +45,10 @@ function ProjectsCard({
           </Button>
         </Link>
 
-        <Link href={sourceLink} className='w-full'>
+        <Link target='_blank' href={html_url} className='w-full'>
           <Button
             icon={
-              <Code2 className='size-4 group-hover:size-5 transition-all' />
+              <Code2 className='size-4 transition-all group-hover:size-5' />
             }
             variant='link'
             className='w-full'
