@@ -16,7 +16,7 @@ const AboutContents = [
   {
     title: 'What technologies do I love?',
     description:
-      'My beloved JavaScript and its endless ecosystem of packages. How can anyone live without JS? From fascinating frameworks like Vue and Next.js to both frontend and backend development, it’s everywhere. Not to mention React—my go-to library for every projects, with its cool components, hooks, and the whole ecosystem (tnx, Mark). Of course, I have a spicial in my heart for open-source projects, just like the legendary Telegram.',
+      'My beloved JavaScript and its endless ecosystem of packages. How can anyone live without JS? From fascinating frameworks like Vue and Next.js to both frontend and backend development, it’s everywhere. Not to mention React—my go-to library for every projects, with its cool components, hooks, and the whole ecosystem (tnx, Mark). Of course, I have a special place in my heart for open-source projects, just like the legendary Telegram.',
   },
   {
     title: 'What inspires my work?',

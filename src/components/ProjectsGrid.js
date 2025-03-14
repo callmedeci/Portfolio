@@ -7,27 +7,36 @@ import ProjectsCard from './ProjectsCard';
 const projects = [
   {
     date: 'March 7, 2025',
-    title: 'Foodie Finder: Discover New Recipes',
-    description:
-      'A web app that helps users discover and save delicious recipes from around the world.',
-    liveLink: '#',
-    sourceLink: '#',
+    title: 'Wild Oasis Hotel Dashboard',
+    description: (
+      <>
+        A React powered hotel management dashboard for managing bookings,
+        cabins, and settings—smooth, efficient, and feature-packed.
+        <br />
+        <span className='font-semibold'>
+          (Use <b>Email: vabaj41481@perceint.com</b> <b>Password: 12345678</b>{' '}
+          to log in)
+        </span>
+      </>
+    ),
+    liveLink: 'https://my-wild-oasis-dashboard.netlify.app',
+    sourceLink: 'https://github.com/callmedeci/The-wild-oasis',
   },
   {
     date: 'February 20, 2025',
-    title: 'TaskMaster: Your Productivity Partner',
+    title: 'Wild Oasis: Your Perfect Getaway',
     description:
-      'A sleek and intuitive to-do list app that keeps you organized and on track.',
-    liveLink: '#',
-    sourceLink: '#',
+      'A beautifully crafted Next.js website designed for the Wild Oasis Hotel. it offers a seamless booking experience with secure authentication, modern UI, and a smooth, intuitive design.',
+    liveLink: 'https://the-wild-oasis-website-production.vercel.app',
+    sourceLink: 'https://github.com/callmedeci/The-wild-oasis-website',
   },
   {
-    date: 'January 15, 2025',
-    title: 'DevConnect: A Hub for Developers',
+    date: 'January 20, 2025',
+    title: 'Snapgram: Share, Like, and Save Moments',
     description:
-      'An online platform where developers can share knowledge, collaborate, and connect.',
-    liveLink: '#',
-    sourceLink: '#',
+      'A social media app where you can create posts, like and save content, explore other users on the People page, and seamlessly sign in and out. Simple, smooth, and built for sharing.',
+    liveLink: 'https://snapgram-psi-ten.vercel.app',
+    sourceLink: 'https://github.com/callmedeci/Snapgram',
   },
 ];
 

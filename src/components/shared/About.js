@@ -1,6 +1,8 @@
 'use client';
-import HashProvider from '@/context/HashContext';
+
 import { motion } from 'motion/react';
+
+import HashProvider from '@/context/HashContext';
 import AboutGrid from '../AboutGrid';
 
 function About() {

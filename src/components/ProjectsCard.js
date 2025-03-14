@@ -29,7 +29,7 @@ function ProjectsCard({
       </p>
 
       <div className='flex flex-col sm:flex-row items-center gap-2'>
-        <Link href={liveLink} className='w-full'>
+        <Link target='_blank' href={liveLink} className='w-full'>
           <Button
             icon={
               <ChevronRight className='size-4 group-hover:size-5 transition-all' />

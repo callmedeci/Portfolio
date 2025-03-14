@@ -1,9 +1,10 @@
-import { sendEmailAddress } from '@/lib/action';
-import { Mail } from 'lucide-react';
 import { useActionState, useEffect } from 'react';
+import { Mail } from 'lucide-react';
+import toast from 'react-hot-toast';
+
+import { sendEmailAddress } from '@/lib/action';
 import SubmitButton from './SubmitButton';
 import FormFiled from './ui/FormFiled';
-import toast from 'react-hot-toast';
 
 const INITIAL_STATE = {
   zodErrors: null,
@@ -38,7 +39,7 @@ function StayUpToDateForm() {
       </div>
 
       <p className='mt-2 text-sm text-zinc-600 dark:text-zinc-400'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+        Get notified when I publish something new, and unsubscribe at any time.
       </p>
 
       <div className='flex items-center gap-5 mt-4'>
