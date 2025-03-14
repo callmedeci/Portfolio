@@ -9,16 +9,16 @@ export function useHashState(initialValue) {
 
   useEffect(
     function () {
-      document.title = `Yunes/${hash}`;
+      document.title = `Yunes Maghsoudie - ${hash}`;
     },
-    [hash]
+    [hash],
   );
 
   useEffect(
     function () {
-      history.replaceState(null, null, `#${hash}`);
+      if (hash) history.replaceState(null, null, `#${hash}`);
     },
-    [hash]
+    [hash],
   );
 
   return { hash, setHash };
