@@ -14,16 +14,18 @@ const OpenSans = Open_Sans({ display: 'swap', subsets: ['latin'] });
 
 export const metadata = {
   title: {
-    template: 'Yunes Yunes Maghsoudie - %s',
+    template: 'Yunes Maghsoudie - %s',
     default: 'Yunes Maghsoudie - intro',
   },
-  description: 'Yunes portfolio',
-  authors: [{ name: 'Yunes Maghsoudie' }],
+  description: 'This wensite is a portfolio',
+  authors: [
+    { name: 'Yunes Maghsoudie', url: 'https://yoyi-portfolio.vercel.app/' },
+  ],
 };
 
 export default function AppLayout({ children }) {
   return (
-    <html lang='en' className='scroll-smooth'>
+    <html lang='en' dir='ltr' className='scroll-smooth'>
       <body
         className={`${OpenSans.className} h-dvh w-full bg-zinc-100 text-zinc-200 dark:bg-zinc-950`}
       >

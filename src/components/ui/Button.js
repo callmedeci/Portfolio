@@ -18,7 +18,7 @@ function Button({ children, className, icon, variant = 'main', onClick }) {
       className={cn(mainStyle, style[variant], className)}
     >
       {icon}
-      <span>{children}</span>
+      {children && <span>{children}</span>}
     </button>
   );
 }

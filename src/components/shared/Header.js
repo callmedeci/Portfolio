@@ -10,7 +10,7 @@ function Header() {
     <HashProvider.Section>
       <header
         id='intro'
-        className='flex flex-col items-center justify-center gap-6 max-w-2xl mx-auto text-center min-h-140 mt-24'
+        className='mx-auto mt-24 flex min-h-140 max-w-2xl flex-col items-center justify-center gap-6 text-center'
       >
         <TypingEffect text='Yunes Maghsoudie JavaScript junkie, React enthusiast, and coffee addict.' />
 
@@ -18,7 +18,7 @@ function Header() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.04, duration: 0.5 }}
-          className='text-zinc-600 dark:text-zinc-400 tracking-wide'
+          className='tracking-wide text-zinc-600 dark:text-zinc-400'
         >
           I&apos;m Yunes, a web developer based in Shiraz. That one guy
           who&apos;s always trying out different technologies, exploring

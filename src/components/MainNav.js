@@ -1,14 +1,14 @@
 'use client';
 
 import { useHash } from '@/context/HashContext';
+import { DoorOpen } from 'lucide-react';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import AppNav from './AppNav';
 import MobileNav from './MobileNav';
 import ThemeToggle from './ThemeToggle';
-import Icon from './ui/Icon';
-import Link from 'next/link';
 import Button from './ui/Button';
-import { ArrowLeft } from 'lucide-react';
+import Icon from './ui/Icon';
 
 const links = [
   { href: 'intro', text: 'Intro' },
@@ -27,12 +27,17 @@ function MainNav() {
 
       {pathname === '/' && <AppNav links={links} hash={hash} />}
 
-      <div className='fixed right-5 z-10 flex items-center gap-1 md:relative md:gap-3'>
+      <div
+        className={`${pathname === '/' ? 'fixed' : ''} right-5 z-[1000000] flex items-center gap-1 md:relative md:gap-3`}
+      >
         {pathname === '/' ? (
           <MobileNav activeHash={hash} links={links} />
         ) : (
-          <Link href='/' className='hidden md:flex'>
-            <Button icon={<ArrowLeft />}>Go back home</Button>
+          <Link href={`${pathname === '/projects' ? '/' : '/projects'}`}>
+            <Button
+              icon={<DoorOpen className='size-7' />}
+              className='size-11 rounded-full shadow-zinc-400 md:size-13 dark:shadow-zinc-950'
+            />
           </Link>
         )}
 

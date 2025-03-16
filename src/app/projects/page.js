@@ -1,23 +1,14 @@
 import ProjectsGrid from '@/components/ProjectsGrid';
 import TypingEffect from '@/components/ui/TypingEffect';
-import { Octokit } from 'octokit';
+import { getRepos } from '@/lib/data-service';
 import { Suspense } from 'react';
 
-const octokit = new Octokit({
-  auth: process.env.GITHUB_API_TOKEN,
-});
+export const metadata = {
+  title: 'projects',
+};
 
 async function Page() {
-  const { data } = await octokit.request('GET /users/{username}/repos', {
-    username: 'callmedeci',
-    headers: {
-      'X-GitHub-Api-Version': '2022-11-28',
-    },
-  });
-
-  const reposWithHomepageURL = data.filter(
-    (repo) => repo.homepage && repo.description,
-  );
+  const repos = await getRepos();
 
   return (
     <div className='flex flex-col'>
@@ -35,7 +26,7 @@ async function Page() {
 
       <Suspense fallback={<p>Loading...</p>}>
         <ProjectsGrid
-          projects={reposWithHomepageURL}
+          projects={repos}
           className='flex flex-col lg:grid lg:grid-cols-2'
         />
       </Suspense>

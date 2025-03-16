@@ -9,7 +9,7 @@ export function useHashState(initialValue) {
 
   useEffect(
     function () {
-      document.title = `Yunes Maghsoudie - ${hash}`;
+      if (hash) document.title = `Yunes Maghsoudie - ${hash}`;
     },
     [hash],
   );

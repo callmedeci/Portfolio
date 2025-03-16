@@ -34,7 +34,7 @@ function useModalContext() {
 
 function Overlay({ children }) {
   return (
-    <div className='fixed top-0 left-0 z-50 h-full w-full backdrop-blur-lg'>
+    <div className='fixed top-0 left-0 z-[1000000] h-full w-full backdrop-blur-lg'>
       {children}
     </div>
   );
