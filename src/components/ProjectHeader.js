@@ -12,7 +12,8 @@ function ProjectHeader({ name, description, topics }) {
         transition={{ delay: 0.04, duration: 0.5 }}
         className='text-center text-2xl font-bold text-zinc-800 md:text-5xl dark:text-zinc-100'
       >
-        Welcome to <br />"{name.replaceAll('-', ' ')}"
+        Welcome to <br />
+        &quot;{name.replaceAll('-', ' ')}&quot;
       </motion.h1>
 
       <motion.p
