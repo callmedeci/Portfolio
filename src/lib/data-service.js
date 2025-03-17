@@ -5,6 +5,7 @@ const octokit = new Octokit({
   auth: process.env.GITHUB_API_TOKEN,
 });
 
+// GET
 export async function getRepos() {
   try {
     const { data: repos } = await octokit.request(
@@ -49,6 +50,32 @@ export async function getRepo(repoName) {
   }
 }
 
+export async function getPinnedRepos() {
+  try {
+    const res = await fetch('https://pinned.berrysauce.dev/get/callmedeci');
+    if (!res) throw new Error('Failed to fetch pinned repositories');
+    const pinned = await res.json();
+
+    const pinnedRepos = await Promise.all(
+      pinned.map((repo) =>
+        octokit.request('GET /repos/{owner}/{repo}', {
+          owner: repo.author,
+          repo: repo.name,
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28',
+          },
+        }),
+      ),
+    );
+
+    if (!pinnedRepos) throw new Error('Failed to fetch pinned repositories');
+
+    return pinnedRepos.map((repo) => repo.data);
+  } catch (err) {
+    console.error(err.message);
+  }
+}
+
 export async function getRepoContent(repoName, contentPath) {
   try {
     const { data: repo } = await octokit.request(
@@ -74,6 +101,7 @@ export async function getRepoContent(repoName, contentPath) {
   }
 }
 
+// PARSE GITHUB MARKDOWN TO HTML
 export async function parseMarkdown(markdown) {
   try {
     const { data: html } = await octokit.request('POST /markdown', {
