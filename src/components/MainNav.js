@@ -1,6 +1,5 @@
 'use client';
 
-import { useHash } from '@/context/HashContext';
 import { DoorOpen } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -18,20 +17,19 @@ const links = [
 ];
 
 function MainNav() {
-  const { hash } = useHash();
   const pathname = usePathname();
 
   return (
     <nav className='relative flex h-14 flex-1 items-center justify-between'>
       <Icon />
 
-      {pathname === '/' && <AppNav links={links} hash={hash} />}
+      {pathname === '/' && <AppNav links={links} />}
 
       <div
         className={`${pathname === '/' ? 'fixed' : ''} right-5 z-[1000000] flex items-center gap-1 md:relative md:gap-3`}
       >
         {pathname === '/' ? (
-          <MobileNav activeHash={hash} links={links} />
+          <MobileNav links={links} />
         ) : (
           <Link href={`${pathname === '/projects' ? '/' : '/projects'}`}>
             <Button

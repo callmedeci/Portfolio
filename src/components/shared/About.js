@@ -10,14 +10,14 @@ function About() {
     <HashProvider.Section>
       <div
         id='about'
-        className='w-full flex flex-col border-t border-zinc-400 dark:border-zinc-700 my-26 py-26 min-h-160'
+        className='my-26 flex min-h-160 w-full flex-col border-t border-zinc-400 py-26 dark:border-zinc-700'
       >
         <motion.h2
           viewport={{ once: true }}
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className='text-2xl md:text-4xl text-zinc-800 dark:text-zinc-200 font-bold after:bg-emerald-500 after:content-[""] after:absolute after:w-26 after:h-0.5 after:left-0 after:bottom-0 relative'
+          className='relative text-2xl font-bold text-zinc-800 after:absolute after:bottom-1 after:left-0 after:h-0.5 after:w-26 after:bg-emerald-500 after:content-[""] md:text-4xl dark:text-zinc-200'
         >
           About me
         </motion.h2>

@@ -1,7 +1,7 @@
 import 'github-markdown-css';
 import Link from 'next/link';
 import { Suspense } from 'react';
-import { Code2, Link as LucideLink } from 'lucide-react';
+import { Code2, Link as LucideLink, Radio } from 'lucide-react';
 
 import {
   getRepo,
@@ -64,7 +64,7 @@ async function Page({ params }) {
 
         <div className='mx-auto flex w-full max-w-5xl items-center justify-end gap-2'>
           <Link target='_blank' href={homepage}>
-            <Button icon={<LucideLink className='size-5' />} variant='link'>
+            <Button icon={<Radio className='size-5' />} variant='link'>
               Watch Live
             </Button>
           </Link>

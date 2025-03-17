@@ -8,7 +8,7 @@ import { motion } from 'motion/react';
 function ProjectMain({ createdAt, updatedAt }) {
   return (
     <main className='mx-auto flex w-full max-w-5xl'>
-      <div className='ml-2 flex w-full flex-1 justify-between gap-5'>
+      <div className='ml-2 flex w-full flex-1 flex-col justify-between gap-5 sm:flex-row'>
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}

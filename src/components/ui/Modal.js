@@ -23,8 +23,7 @@ function Modal({ children }) {
     </ModalContext.Provider>
   );
 }
-
-function useModalContext() {
+export function useModalContext() {
   const context = use(ModalContext);
 
   if (!context) throw new Error('Hook used outside the context!');

@@ -1,7 +1,12 @@
+'use client';
+
+import { useHash } from '@/context/HashContext';
 import { motion } from 'motion/react';
 import Link from 'next/link';
 
-function AppNav({ hash, links }) {
+function AppNav({ links }) {
+  const { hash } = useHash();
+
   return (
     <motion.ul className='fixed z-[100] hidden gap-5 rounded-2xl bg-zinc-300 p-1.5 text-zinc-800 shadow-md ring ring-zinc-200 md:left-2/8 md:flex lg:left-1/3 lg:gap-10 xl:left-2/5 dark:bg-zinc-800 dark:text-zinc-400 dark:ring-zinc-900'>
       {links.map((link, i) => (

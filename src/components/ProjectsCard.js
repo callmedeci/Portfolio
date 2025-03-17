@@ -1,4 +1,4 @@
-import { ChevronRight, Code2 } from 'lucide-react';
+import { ChevronRight, Code2, Radio } from 'lucide-react';
 import { motion } from 'motion/react';
 
 import Link from 'next/link';
@@ -36,7 +36,7 @@ function ProjectsCard({ project, index }) {
         <Link target='_blank' href={homepage} className='w-full'>
           <Button
             icon={
-              <ChevronRight className='size-4 transition-all group-hover:size-5' />
+              <Radio className='size-4 transition-all group-hover:size-5' />
             }
             variant='link'
             className='w-full'

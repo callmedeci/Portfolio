@@ -24,6 +24,16 @@ const techList = [
     title: 'nextJS developer',
     level: 'junior',
   },
+  {
+    imageSrc: '/svg/git.svg',
+    title: 'Git',
+    level: 'Mid',
+  },
+  {
+    imageSrc: '/svg/vite.svg',
+    title: 'vite',
+    level: 'Mid',
+  },
 ];
 
 function TechStack() {
@@ -33,7 +43,7 @@ function TechStack() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className='flex flex-col md:grid md:grid-cols-2 gap-5 mt-5'
+      className='mt-5 flex flex-col gap-5 md:grid md:grid-cols-2'
     >
       {techList.map((tech, i) => (
         <TechItem
@@ -55,9 +65,9 @@ function TechItem({ imageSrc, title, level, index }) {
       initial={{ opacity: 0, y: index * 15 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className='flex gap-2 items-center w-full'
+      className='flex w-full items-center gap-2'
     >
-      <div className='bg-zinc-200 dark:bg-zinc-800 p-2 w-max rounded-full overflow-hidden shadow-md'>
+      <div className='w-max overflow-hidden rounded-full bg-zinc-200 p-2 shadow-md dark:bg-zinc-800'>
         <Image
           className='rounded-full'
           src={imageSrc}
