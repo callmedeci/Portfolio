@@ -21,7 +21,7 @@ function PinnedProjects({ projects }) {
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className='relative col-span-full self-start text-2xl font-bold text-zinc-800 after:absolute after:bottom-1 after:left-0 after:h-0.5 after:w-26 after:bg-emerald-500 after:content-[""] md:text-4xl dark:text-zinc-200'
+          className='relative col-span-full self-start text-2xl font-bold text-zinc-800 after:absolute after:-bottom-[5px] after:left-0 after:h-0.5 after:w-26 after:bg-emerald-500 after:content-[""] md:text-4xl dark:text-zinc-200'
         >
           Projects
         </motion.h2>
@@ -60,14 +60,16 @@ function PinnedProjects({ projects }) {
 
             <TechStack />
 
-            <Button
-              icon={
-                <FolderDown className='size-5 transition-all group-hover:size-6' />
-              }
-              className='mt-5 w-full'
-            >
-              Download CV
-            </Button>
+            <Link href='/pdf/cv.pdf'>
+              <Button
+                icon={
+                  <FolderDown className='size-5 transition-all group-hover:size-6' />
+                }
+                className='mt-5 w-full'
+              >
+                Download CV
+              </Button>
+            </Link>
           </div>
         </motion.div>
       </div>
