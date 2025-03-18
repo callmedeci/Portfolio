@@ -44,9 +44,9 @@ function LinkItem({ icon, href, index }) {
     >
       <Link
         href={href}
-        className='w-full h-full p-2 text-zinc-700 dark:text-zinc-300 hover:text-emerald-500 transition-all duration-300 flex items-center bg-zinc-200 dark:bg-zinc-800 rounded-full shadow-md shadow-zinc-300 dark:shadow-zinc-950 overflow-hidden group'
+        className='group flex h-full w-full items-center overflow-hidden rounded-full bg-zinc-200 p-2 text-zinc-700 shadow-md shadow-zinc-300 transition-all duration-300 hover:text-emerald-500 dark:bg-zinc-800 dark:text-zinc-300 dark:shadow-zinc-950'
       >
-        <span className='group-hover:rotate-12 group-hover:scale-100 duration-300 transition-all scale-95'>
+        <span className='scale-95 transition-all duration-300 group-hover:scale-100 group-hover:rotate-12'>
           {icon}
         </span>
       </Link>

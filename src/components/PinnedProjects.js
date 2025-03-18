@@ -30,12 +30,7 @@ function PinnedProjects({ projects }) {
           <ProjectsGrid projects={projects} />
 
           <Link href='/projects' className='gap-1 lg:w-[50%] lg:self-end'>
-            <Button
-              icon={
-                <FolderOpen className='size-5 transition-all group-hover:size-6' />
-              }
-              className='w-full'
-            >
+            <Button icon={<FolderOpen className='size-5' />} className='w-full'>
               More Projects
             </Button>
           </Link>
@@ -60,11 +55,14 @@ function PinnedProjects({ projects }) {
 
             <TechStack />
 
-            <Link href='/pdf/cv.pdf'>
+            <Link
+              target='_blank'
+              rel='noopener noreferrer'
+              download='Yunes maghsoudie cv'
+              href='/pdf/cv.pdf'
+            >
               <Button
-                icon={
-                  <FolderDown className='size-5 transition-all group-hover:size-6' />
-                }
+                icon={<FolderDown className='size-5' />}
                 className='mt-5 w-full'
               >
                 Download CV
