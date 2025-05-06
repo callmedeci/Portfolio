@@ -18,7 +18,7 @@ const links = [
   },
   {
     icon: <Mail className='size-7' />,
-    href: 'mailto:callmedecim@gmail.com',
+    href: 'mailto:yunesmaghsoudie@gmail.com',
   },
 ];
 
