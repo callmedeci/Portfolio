@@ -1,7 +1,13 @@
 import { Mail } from 'lucide-react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaTelegram } from 'react-icons/fa';
+import {
+  FaGithub,
+  FaLinkedin,
+  FaReddit,
+  FaTelegram,
+  FaTwitter,
+} from 'react-icons/fa';
 
 const links = [
   {
@@ -9,8 +15,12 @@ const links = [
     href: 'https://github.com/callmedeci',
   },
   {
-    icon: <FaLinkedin className='size-7' />,
-    href: 'https://www.linkedin.com/in/yunes-maghsoudie',
+    icon: <FaTwitter className='size-7' />,
+    href: 'https://x.com/RealMrYuyi',
+  },
+  {
+    icon: <FaReddit className='size-7' />,
+    href: 'https://www.reddit.com/user/callMeYunes/',
   },
   {
     icon: <FaTelegram className='size-7' />,
@@ -18,7 +28,7 @@ const links = [
   },
   {
     icon: <Mail className='size-7' />,
-    href: 'mailto:yunesmaghsoudie@gmail.com',
+    href: 'mailto:yunes@osloweb.no',
   },
 ];
 
